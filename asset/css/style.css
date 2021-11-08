@@ -1,9 +1,9 @@
-@charset "ISO-8859-1";
+@import url("var.css");
 .bg-grey{
-	background:#676565
+	background:var(--bg-grey);
 }
 .bg-lightgrey{
-	background:#C4C4C4
+	background:var(--bg-lightgrey);
 }
 .h-2r{
 	height:2rem;
