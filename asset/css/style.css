@@ -30,8 +30,9 @@
 	color: white;
 }
 .col-md-2 a:hover, .col-md-2 a:hover{
-	color: #FFA63D;
+	color: var(--orange);
+	text-decoration: none;
 }
-/* @media (max-width: 550px) {
-
-} */
+.table-theme{
+	background-color: #fdfdfe;
+}
