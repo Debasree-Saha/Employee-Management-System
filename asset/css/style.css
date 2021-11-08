@@ -5,6 +5,12 @@
 .bg-lightgrey{
 	background:var(--bg-lightgrey);
 }
+.bg-orange{
+	background:var(--orange);
+}
+.text-orange{
+	color: var(--orange);
+}
 .h-2r{
 	height:2rem;
 }
