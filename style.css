@@ -1,0 +1,31 @@
+@charset "ISO-8859-1";
+.bg-grey{
+	background:#676565
+}
+.bg-lightgrey{
+	background:#C4C4C4
+}
+.h-2r{
+	height:2rem;
+}
+.h-3r{
+	height:3rem;
+}
+.h-7r{
+	height:7rem;
+}
+.w-2r{
+	width:2rem;
+}
+.w-7r{
+	width:7rem;
+}
+.col-md-2  a:link, .col-md-2  a:visited{
+	color: white;
+}
+.col-md-2 a:hover, .col-md-2 a:hover{
+	color: #FFA63D;
+}
+/* @media (max-width: 550px) {
+
+} */
