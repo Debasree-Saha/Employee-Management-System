@@ -1,0 +1,14 @@
+.bg-test{
+    background: red;
+}
+.col-md-2  a:link, .col-md-2  a:visited{
+	color: white;
+    text-decoration: none;
+}
+.col-md-2 a:hover{
+	color: #FFA63D;
+} 
+.nav_link{
+    display: grid;
+    grid-template-columns: max-content max-content;
+}
