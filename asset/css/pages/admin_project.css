@@ -1,14 +1,6 @@
-.bg-test{
-    background: red;
+.fa-file-pdf-o{
+    color: rgb(255, 70, 70);
 }
-.col-md-2  a:link, .col-md-2  a:visited{
-	color: white;
-    text-decoration: none;
-}
-.col-md-2 a:hover{
-	color: #FFA63D;
-} 
-.nav_link{
-    display: grid;
-    grid-template-columns: max-content max-content;
+.fa-file-excel-o{
+    color: rgb(15, 133, 0);
 }

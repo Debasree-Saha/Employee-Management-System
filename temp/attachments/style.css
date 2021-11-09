@@ -1,0 +1,63 @@
+@charset "ISO-8859-1";
+.bg-nav{
+	background-color:#676565;
+}
+.font-white{
+	color:#FFFFFF;
+}
+.img-1{
+	width:2rem;
+	height:2rem;
+}
+.notification {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    border-radius: 2px;
+  }
+  
+  
+  
+  .notification .badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+  }
+  .h-2r{
+	height:2rem;
+}
+.h-3r{
+	height:3rem;
+}
+.h-7r{
+	height:7rem;
+}
+.w-2r{
+	width:2rem;
+}
+.w-7r{
+	width:7rem;
+}
+.col-md-2  a:link, .col-md-2  a:visited{
+	color: white;
+}
+.col-md-2 a:hover, .col-md-2 a:hover{
+	color: #FFA63D;
+}
+.active-section{
+    background-color: #c4c4c445;
+}
+input[type=text] {
+    background-color: #c4c4c4;
+    padding: 8px 20px;
+
+    color: black;
+  }
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+  }
