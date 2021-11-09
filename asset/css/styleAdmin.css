@@ -5,6 +5,9 @@
 .bg-lightgrey{
 	background:var(--bg-lightgrey);
 }
+.bg-white{
+  background: #FFFFFF;
+}
 .bg-orange{
 	background:var(--orange);
 }
