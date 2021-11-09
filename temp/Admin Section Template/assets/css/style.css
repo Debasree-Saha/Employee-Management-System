@@ -47,6 +47,7 @@
 }
 .col-md-2 a:hover, .col-md-2 a:hover{
 	color: #FFA63D;
+  text-decoration: none;
 }
 .active-section{
     background-color: #c4c4c445;
