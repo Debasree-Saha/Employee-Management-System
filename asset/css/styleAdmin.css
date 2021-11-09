@@ -1,0 +1,78 @@
+@import url("var.css");
+.bg-grey{
+	background:var(--bg-grey);
+}
+.bg-lightgrey{
+	background:var(--bg-lightgrey);
+}
+.bg-white{
+  background: #FFFFFF;
+}
+.bg-orange{
+	background:var(--orange);
+}
+.text-orange{
+	color: var(--orange) !important;
+}
+.text-white{
+	color:#FFFFFF !important;
+}
+.img-1{
+	width:2rem;
+	height:2rem;
+  padding: 0;
+}
+.notification {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    border-radius: 2px;
+  }
+
+  .notification .badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+  }
+  .h-2r{
+	height:2rem;
+}
+.h-3r{
+	height:3rem;
+}
+.h-7r{
+	height:7rem;
+}
+.w-2r{
+	width:2rem;
+}
+.w-7r{
+	width:7rem;
+}
+.col-md-2  a:link, .col-md-2  a:visited{
+	color: white;
+}
+.col-md-2 a:hover, .col-md-2 a:hover{
+	color: #FFA63D;
+  text-decoration: none;
+}
+.active-section{
+    background-color: #c4c4c445;
+}
+input[type=text] {
+    background-color: #c4c4c4;
+    padding: 8px 20px;
+
+    color: black;
+  }
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+  }
+.fs-24{
+  font-size: 24px;
+}
