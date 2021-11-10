@@ -1,0 +1,9 @@
+input[type=text] {
+    background-color: #c4c4c4;
+    padding: 8px 20px;
+    color: black;
+  }
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(0, 0, 0);
+    opacity: 1; /* Firefox */
+  }
