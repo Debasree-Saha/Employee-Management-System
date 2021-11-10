@@ -60,7 +60,7 @@
 
             <div class="row">
                 <div class="input-group col-4">
-                    <input type="text" class="form-control" placeholder="Search Here">
+                    <input type="text" class="form-control ml-3" placeholder="Search Here">
                     <div class="input-group-append">
                         <button class="btn text-white bg-grey" type="button">
                             <i class="fa fa-search"></i>
@@ -81,7 +81,7 @@
                         End Date
                     </button>
                 </div>
-                <div class="ml-auto mr-1">
+                <div class="ml-auto mr-4">
                     <button class="btn">
                         <i class="fa fa-file-pdf-o fs-24" aria-hidden="true"></i>
                     </button>
@@ -92,31 +92,29 @@
                 </div>
             </div>
 
-            <div class="mt-5 mb-3">
+            <div class="mt-5 mb-3 mr-3">
                 <center>
                     <h3 class="d-inline-block">Admin Project</h3>
                 </center>
-                <button class="d-flex btn text-white bg-grey ml-auto" data-backdrop="static" data-keyboard="false" type="button" data-toggle="modal" data-target="#addProjectModal">
+                <button class="d-flex btn text-white bg-grey ml-auto" data-keyboard="false" type="button" data-toggle="modal" data-target="#addProjectModal">
                     Add Project
-                </button>
-                <button class="d-flex btn text-white bg-grey ml-auto" data-backdrop="static" data-keyboard="false" type="button" data-toggle="modal" data-target="#projectDetailsModal">
-                    Project Details
                 </button>
             </div>
 
             <div class="mx-3">
-                <table class="table table-bordered">
-                    <thead>
+                <table class="table table-striped">
+                    <thead class="bg-orange">
                       <tr>
-                        <th class="bg-orange" scope="col">Code</th>
-                        <th class="bg-orange" scope="col">Name</th>
-                        <th class="bg-orange" scope="col">Active Members</th>
-                        <th class="bg-orange" scope="col">St. Date</th>
-                        <th class="bg-orange" scope="col">End Date</th>
-                        <th class="bg-orange" scope="col">Status</th>
-                        <th class="bg-orange" scope="col">Dept</th>
-                        <th class="bg-orange" scope="col"></th>
-                        <th class="bg-orange" scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col">Code</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Active Members</th>
+                        <th scope="col">St. Date</th>
+                        <th scope="col">End Date</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Dept</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -128,13 +126,19 @@
                         <td>lorem1</td>
                         <td>lorem1</td>
                         <td>lorem1</td>
-                        <td><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
+                        <td>lorem1</td>
+                        <td>
+                            <button class="d-flex btn ml-auto" data-keyboard="false" type="button" data-toggle="modal" data-target="#projectDetailsModal">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                            </button>
+                        </td>
                         <td><i class="fa fa-trash-o" aria-hidden="true"></i></td>
                       </tr>
                     </tbody>
                 </table>
             </div>
 
+            <!--Modal-->
             <div class="modal fade" id="addProjectModal" tabindex="-1" aria-labelledby="addProjectModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                   <div class="modal-content bg-lightgrey">
@@ -199,7 +203,6 @@
                         </table>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                       <button type="button" class="btn bg-orange"><strong>Create</strong></button>
                     </div>
                   </div>
@@ -282,7 +285,6 @@
                         </table>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                       <button type="button" class="btn bg-orange"><strong>Create</strong></button>
                     </div>
                   </div>
