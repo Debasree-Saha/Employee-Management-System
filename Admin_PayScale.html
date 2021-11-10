@@ -1,0 +1,222 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay Scale</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./asset/css/styleAdmin.css">
+    <link rel="stylesheet" href="./asset/css/pages/admin_payscale.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-sm navbar-light bg-grey">
+    <a class="navbar-brand text-white" href="#">Navbar</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="d-flex align-items-center justify-content-end navbar-nav ml-auto mr-2 pr-2">
+        <a class="mt-1 mr-0 pr-0 notification">
+            <i class="fa fa-bell .text-white" style="font-size:24px;"></i>
+            <!-- update badge here -->
+            <span class="badge">3</span>
+        </a>
+        <div class="ml-3">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle bg-grey border-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+            <img src="./asset/images/icons8-male-user-90.png" class="img-1">
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+
+        <!--Side Bar-->
+        <div class="col-3 col-md-2 bg-grey vh-100 px-0 ">
+            <div class="d-flex py-3 justify-content-center align-items-center h-sm-25">
+                <img src="./asset/images/admin.jpeg" alt="" class="position-relative h-7r w-7r rounded-circle p-3 p-sm-0">
+            </div>
+
+            <div class="d-flex py-4 flex-column justify-content-evenly align-items-start text-white  fs-6 fs-sm-5">
+                <a class="py-4 px-4"  href="#">Admin Dashboard</a>
+                <a class="py-4 px-4" href="#">Employee</a>
+                <a  class="py-4 px-4 " href="#">Department</a>
+                <div class="active-section py-4 w-100 ">
+                    <a class="py-4 px-4 text-orange" href="#">Project</a>
+                </div>
+                <a class="py-4 px-4" href="#">PayScale</a>
+            </div>
+        </div>
+
+        <div class="col-9 col-md-10 my-3">
+            <!-- Start Here -->
+
+            <div class="row">
+                <div class="input-group col-4 ml-3">
+                    <input type="text" class="form-control" placeholder="Search Here">
+                    <div class="input-group-append">
+                        <button class="btn text-white bg-grey" type="button">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col">
+                    <button class="btn text-white bg-grey" type="button">
+                        Max Basic
+                    </button>
+                    <button class="btn text-white bg-grey" type="button">
+                        Min Basic
+                    </button>
+                </div>
+                <div class="ml-auto mr-5">
+                    <button type="button" class="btn text-white bg-grey">Filter</button>
+                </div>
+            </div>
+
+            <div class="mt-5 mb-3 mr-3">
+                <center>
+                    <h3 class="d-inline-block">Pay Scale Slabs</h3>
+                </center>
+                <button class="d-flex btn text-white bg-grey ml-auto" data-keyboard="false" type="button" data-toggle="modal" data-target="#addPayScaleModal">
+                    Add Pay Scale
+                </button>
+            </div>
+
+            <!--Table-->
+            <div class="mx-3">
+                <table class="table table-striped">
+                    <thead class="bg-orange">
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Code</th>
+                        <th scope="col">Min Basic</th>
+                        <th scope="col">Max Basic</th>
+                        <th scope="col">DA%</th>
+                        <th scope="col">HRA%</th>
+                        <th scope="col">PF%</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>lorem1</td>
+                        <td>lorem1</td>
+                        <td>lorem1</td>
+                        <td>lorem1</td>
+                        <td>lorem1</td>
+                        <td>lorem1</td>
+                        <td>
+                            <button class="d-flex btn ml-auto" data-keyboard="false" type="button" data-toggle="modal" data-target="#updatePayScaleModal">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                            </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="ml-auto mr-4 mt-4 float-right">
+                <button class="btn">
+                    <i class="fa fa-file-pdf-o fs-24" aria-hidden="true"></i>
+                </button>
+                <button class="btn">
+                    <i class="fa fa-file-excel-o fs-24" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <!--Modal-->
+            <div class="modal fade" id="addPayScaleModal" tabindex="-1" aria-labelledby="addPayScaleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content bg-lightgrey">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Update Employee Details</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="scode" class="my-3 py-1 w-100">Salary Code</label>
+                                    <label for="maxbasic" class="my-3 py-1 w-100">Max Basic</label>
+                                    <label for="minbasic" class="my-3 py-1 w-100">Min Basic</label>
+                                    <label for="da" class="my-3 py-1 w-100">DA%</label>
+                                    <label for="hra" class="my-3 py-1 w-100">HRA%</label>
+                                    <label for="pf" class="my-3 py-1 w-100">PF%</label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="number" class="w-100 my-3" id="scode" placeholder="">
+                                    <input type="number" class="w-100 my-3" id="maxbasic" placeholder="">
+                                    <input type="number" class="w-100 my-3" id="minbasic" placeholder="">
+                                    <input type="number" class="w-100 my-3" id="da" placeholder="">
+                                    <input type="number" class="w-100 my-3" id="hra" placeholder="">
+                                    <input type="number" class="w-100 my-3" id="pf" placeholder="">	
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn bg-orange">Update</button>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+
+            <div class="modal fade" id="updatePayScaleModal" tabindex="-1" aria-labelledby="updatePayScaleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content bg-lightgrey">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="updatePayScaleModalLabel">Update Pay Scale Modal</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-light my-5">
+                            <thead class="bg-orange">
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Code</th>
+                                <th scope="col">Min Basic</th>
+                                <th scope="col">Max Basic</th>
+                                <th scope="col">DA%</th>
+                                <th scope="col">HRA%</th>
+                                <th scope="col">PF%</th>
+                                <th scope="col"></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>lorem1</td>
+                                <td>lorem1</td>
+                                <td>lorem1</td>
+                                <td>lorem1</td>
+                                <td>lorem1</td>
+                                <td>lorem1</td>
+                                <td>
+                                    <center><button type="button" class="btn"><i class="fa fa-minus" aria-hidden="true"></i></button></center>
+                                </td>
+                              </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn bg-orange"><strong>Apply</strong></button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>                       
+</div>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+</body>
+</html>
