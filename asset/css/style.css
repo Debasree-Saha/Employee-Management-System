@@ -9,7 +9,7 @@
 	background:var(--orange);
 }
 .text-orange{
-	color: var(--orange);
+	color: var(--orange) !important;
 }
 .h-2r{
 	height:2rem;
@@ -26,23 +26,15 @@
 .w-7r{
 	width:7rem;
 }
-.col-md-2  a:link, .col-md-2  a:visited{
-	color: white;
-}
-.col-md-2 a:hover, .col-md-2 a:hover{
-	color: var(--orange);
-	text-decoration: none;
-}
+
 .table-theme{
 	background-color: #fdfdfe;
 }
-
 
 body.login {
 	display: block;
 	position: relative;
 }
-
   
 body.login::after {
 	content: "";
@@ -79,4 +71,15 @@ width: 15px;
 
 .fontstyle{
 	font-family: 'Mochiy Pop P One', sans-serif;
+}
+
+.col-md-2  a:link, .col-md-2  a:visited{
+	color: white;
+}
+.col-md-2 a:hover, .col-md-2 a:hover{
+	color: #FFA63D;
+  text-decoration: none;
+}
+.active-section{
+  background-color: #c4c4c445;
 }
