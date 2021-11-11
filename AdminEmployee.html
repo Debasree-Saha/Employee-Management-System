@@ -1,0 +1,422 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-Employee</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="./asset/css/pages/styleAdminEmployee.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script>
+    function fun(){
+        document.getElementById("ex").innerHTML="";
+        var choice=document.getElementById("list").value;
+        if(choice==="dept"){
+            var txt4='<br><br>';
+              var txt1='<select class="form-control" id="slct-dept">';
+            var txt2='<option value="">Choose Option..</option><option value="">Accounting</option><option value="">Admin</option><option value="">SYSAdmin</option><option value="">HR</option>';
+            var txt3='</select>';
+            document.getElementById("ex").innerHTML+=txt4+txt1+txt2+txt3;
+        }
+        else if(choice==="Current_Status"){
+            var txt4='<br><br>'
+              var txt1='<select class="form-control" id="slct-curr-status">';
+            var txt2='<option value="">Choose Option..</option><option value="">Active</option><option value="">Retired</option><option value="">Layoff</option><option value="">Left</option>';
+            var txt3='</select>';
+            document.getElementById("ex").innerHTML+=txt4+txt1+txt2+txt3;
+        }
+        else if(choice==="doj"){
+            var txt4='<br><br>';
+            var txt1='<input type="date" class="form-control" id="date-doj" placeholder="Enter Joining Date">';
+            var txt2='<input type="radio" name="radio-doj" id="r1-doj"><span class="fs-30">After    </span>';
+            var txt3='<input type="radio"  name="radio-doj" id="r2-doj"><span class="fs-30">Before</span>';
+            document.getElementById("ex").innerHTML+=txt4+txt1+txt4+txt2+txt3;
+        }
+    }
+    function formreset(){
+        document.getElementById("report-employee").reset();
+
+    }
+    function fun2(){
+        document.getElementById("ex").innerHTML="";
+
+    }
+   
+</script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-nav">
+        <a class="navbar-brand text-white" href="#">Navbar</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="d-flex align-items-center justify-content-end navbar-nav ml-auto mr-2 pr-2">
+          <a class="mt-1 mr-0 pr-0  notification" data-toggle="modal" data-target="#notification-modal">
+            <i class="fa fa-bell" style="font-size:24px;color:#FFFFFF"></i>
+            <span class="badge">3</span>
+          </a>
+          <div class="ml-3">
+          <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle bg-nav border-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+          <img src="./asset/images/icons8-male-user-90.png" style="width:2rem;height:2rem;padding:0">
+          </button>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Employee Details</a>
+          <a class="dropdown-item" href="#">Department Details</a>
+          <a class="dropdown-item" href="#">Project Details</a>
+          <a class="dropdown-item" href="#">Payscale</a>
+        </div>
+          </div>
+        </div>
+    </div>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-3 col-md-2 bg-nav vh-100 px-0 ">
+                <div class="d-flex py-3 justify-content-center align-items-center h-sm-25">
+                    <img src="./asset/images/admin.jpeg" alt="" class="position-relative h-7r w-7r rounded-circle p-3 p-sm-0">
+                </div>
+    
+                <div class="d-flex py-4 flex-column justify-content-evenly align-items-start text-white  fs-6 fs-sm-5">
+                    <a class="py-4 px-4"  href="#">Admin Dashboard</a>
+                    <div class="active-section py-4 w-100 "><a class="px-4" style="color:orange;"  href="#">Employee</a></div>
+                    <a  class="py-4 px-4 " href="#">Department</a>
+                    <a class="py-4 px-4 "  href="#">Project</a>
+                    <a class="py-4 px-4 "  href="#">PayScale</a>
+                </div>
+            </div>
+            <div class="col-9 col-md-10">
+                <div class="row">
+                    <div class="col-md-6 col-6">
+                <form action="" method="get">
+                    <input type="text" class="ml-4 my-4 w-100 tet" placeholder="Search Here">
+                </form>
+                </div>
+                <div class=" col-md-6 col-6 ">
+                <button class="btn btn-secondary mr-0 ml-auto d-block my-4" onclick="fun2()" data-toggle="modal" data-target="#report">ADD FILTER</button>
+                </div>
+                </div>
+                <div class="modal fade" id="report" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="report-title">ADD FILTER</h5>
+                            <button type="button" class="close" onclick="formreset()" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body" id="m1-body">
+                                <form action="" id="report-employee">
+                                    <select class="form-select form-control" onchange="fun()" id="list">
+                                        <option value="">Choose..</option>
+                                        <option value="Current_Status">Current_Status</option>
+                                        <option value="doj">Date_Of_Joining</option>
+                                        <option value="dept">Department</option>
+                                        <option value="payscale">Payscale</option>
+                                    </select>
+                                    <div id="ex">
+
+                                    </div>
+                                </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" onclick="formreset()" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Add Filter</button>
+                          </div>
+                          </div>
+                          </div>
+                          
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-12 text-center">
+                        <h3>Employee</h3>
+                    </div>
+                </div>
+                <br><br>
+                <div class="row">
+                    <div class="col-md-12 col-12">
+                        <table class="table table-bordered">
+                            <thead class="text-center">
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Contact No</th>
+                                <th>DOB</th>
+                                <th>Dept ID</th>
+                                <th>Payscale ID</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="text-center"><i class="fa fa-edit" data-toggle="modal" data-target="#edit" style="font-size:24px"></i>
+
+                                    </td>
+                                    <td class="text-center"><i class="fa fa-trash-o"  data-toggle="modal" data-target="#delete-modal" style="font-size:24px"></i>
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal fade" id="edit" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="update-title">Update Employee Details</h5>
+                                <button type="button" class="close" onclick= data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <form  action="">
+                                    <div class="d-flex justify-content-between">
+                                    <div class="form-group">
+                                      <label for="Dept code">Department Code:</label>
+                                      <input type="text" value="Acc123" class="form-control" id="dept">
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="PayScale Code">Pay Scale Code:</label>
+                                      <input type="text" value="Slab123" class="form-control" id="payscale">
+                                    </div>
+                                </div>
+                                <div class="ml-auto mr-0 d-block">
+                                <input type="submit" class="btn btn-secondary" value="Apply Changes">
+                                    </div>
+                                  </form>
+                                  <div class="fixTableHead">
+                                  <table class="table table-bordered table-striped text-center">
+
+                                      <thead>
+                                         <tr>
+                                             <th>Project-ID</th>
+                                             <th>Project-Name</th>
+                                             <th></th>
+                                         </tr> 
+                                      </thead>
+                                      <tbody>
+                                          <tr>
+                                              <td></td>
+                                              <td></td>
+                                              <td><img src="https://img.icons8.com/ios/50/000000/minus.png" style="width:25px;height:25px;"/></td>
+                                          </tr>
+                                          <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td><img src="https://img.icons8.com/ios/50/000000/minus.png" style="width:25px;height:25px;"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td><img src="https://img.icons8.com/ios/50/000000/minus.png" style="width:25px;height:25px;"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td><img src="https://img.icons8.com/ios/50/000000/minus.png" style="width:25px;height:25px;"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td><img src="https://img.icons8.com/ios/50/000000/minus.png" style="width:25px;height:25px;"/></td>
+                                        </tr>
+                                      </tbody>
+                                  </table>
+                                  </div>
+                                  <div class="text-center">
+                                  <button class="btn btn-secondary " data-toggle="modal" data-target="#project-add">ADD PROJECT</button>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"  data-dismiss="modal">Close</button>
+                                  </div>
+                            </div>
+                            </div>
+                </div>
+
+            </div>
+            <div class="modal fade" id="notification-modal" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="notification-title">Registration Requests</h5>
+                            <button type="button" class="close"  data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="fixTableHead">
+                                <table class="table table-bordered table-striped text-center">
+                                    <thead>
+                                        <tr>
+                                            <th>User ID</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>DOB</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><button class="btn btn-success">Approve</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><button class="btn btn-success">Approve</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><button class="btn btn-success">Approve</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><button class="btn btn-success">Approve</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><button class="btn btn-success">Approve</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                             </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"  data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                        </div>
+            </div>
+            <div class="modal fade" id="project-add" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project-add-title">Add Projects To Employee</h5>
+                            <button type="button" class="close"  data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="fixTableHead">
+                                <table class="table table-bordered table-striped text-center">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Project-Code</th>
+                                            <th>project-Name</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><img src="https://img.icons8.com/ios/50/000000/plus--v2.png" style="width: 25px;height:25px;"/></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="https://img.icons8.com/ios/50/000000/plus--v2.png" style="width: 25px;height:25px;"/></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="https://img.icons8.com/ios/50/000000/plus--v2.png" style="width: 25px;height:25px;"/></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="https://img.icons8.com/ios/50/000000/plus--v2.png" style="width: 25px;height:25px;"/></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="https://img.icons8.com/ios/50/000000/plus--v2.png" style="width: 25px;height:25px;"/></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"  data-dismiss="modal">Close</button>
+                          </div>
+                          </div>
+                          </div>
+            </div>
+            <div class="modal fade" id="delete-modal" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="delete-title">Change Employee Status</h5>
+                            <button type="button" class="close"  data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <form  action="">
+                                <div class="form-group">
+                                  <label for="Employee ID">Employee Id:</label>
+                                  <input type="text" value="Emp123" class="form-control" id="empid" readonly>
+                                </div>
+                                <div class="form-group">
+                                  <label for="Department Code">Department Code:</label>
+                                  <input type="text" value="acc123" class="form-control" id="dept" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="PayScale Code">Payscale Code:</label>
+                                    <input type="text" value="Slab123" class="form-control" id="payscale" readonly>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="PayScale Code">Status</label>
+                                    <select class="form-control" id="">
+                                        <option value="">Choose..</option>
+                                        <option value="">Actve</option>
+                                        <option value="">Retired</option>
+                                        <option value="">Layoff</option>
+                                        <option value="">Left</option>
+
+                                    </select>
+                                  </div>
+                            
+                            <div class="ml-auto mr-0 d-block">
+                            <input type="submit" class="btn btn-secondary" value="Apply Changes">
+                                </div>
+                              </form>
+                          </div>
+                        </div>
+                        </div>
+            </div>
+
+</div>
+                          
+    </div>
+</body>
+</html>
