@@ -14,7 +14,7 @@
     <a class="navbar-brand text-white" href="#">Navbar</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div class="d-flex align-items-center justify-content-end navbar-nav ml-auto mr-2 pr-2">
-        <a class="mt-1 mr-0 pr-0 notification">
+        <a class="mt-1 mr-0 pr-0 notification" data-toggle="modal" data-target="#notification-modal">
             <i class="fa fa-bell .text-white" style="font-size:24px;"></i>
             <!-- update badge here -->
             <span class="badge">3</span>
@@ -47,11 +47,11 @@
             <div class="d-flex py-4 flex-column justify-content-evenly align-items-start text-white  fs-6 fs-sm-5">
                 <a class="py-4 px-4"  href="#">Admin Dashboard</a>
                 <a class="py-4 px-4" href="#">Employee</a>
-                <a  class="py-4 px-4 " href="#">Department</a>
+                <a  class="py-4 px-4" href="#">Department</a>
                 <div class="active-section py-4 w-100 ">
                     <a class="py-4 px-4 text-orange" href="#">Project</a>
                 </div>
-                <a class="py-4 px-4 "  href="#">PayScale</a>
+                <a class="py-4 px-4"  href="#">PayScale</a>
             </div>
         </div>
 
@@ -67,7 +67,10 @@
                         </button>
                     </div>
                 </div>
-                <div class="col">
+                <div class="ml-auto mr-4">
+                    <button type="button" class="btn text-white bg-grey px-4">Add Filter</button>
+                </div>
+                <!-- <div class="col">
                     <button class="btn text-white bg-grey" type="button">
                         Status
                     </button>
@@ -80,16 +83,8 @@
                     <button class="btn text-white bg-grey" type="button">
                         End Date
                     </button>
-                </div>
-                <div class="ml-auto mr-4">
-                    <button class="btn">
-                        <i class="fa fa-file-pdf-o fs-24" aria-hidden="true"></i>
-                    </button>
-                    <button class="btn">
-                        <i class="fa fa-file-excel-o fs-24" aria-hidden="true"></i>
-                    </button>
-                    <!-- <i class="fa fa-file-excel-o" aria-hidden="true"></i> -->
-                </div>
+                </div> -->
+                <!-- Remove The Pdf Xls report Genaration Here -->
             </div>
 
             <div class="mt-5 mb-3 mr-3">
@@ -138,7 +133,7 @@
                 </table>
             </div>
 
-            <!--Modal-->
+            <!--Modals Start-->
             <div class="modal fade" id="addProjectModal" tabindex="-1" aria-labelledby="addProjectModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                   <div class="modal-content bg-lightgrey">
@@ -290,6 +285,88 @@
                   </div>
                 </div>
             </div>
+
+            <div class="modal fade" id="notification-modal" tabindex="-1" data-backdrop="static" data-keyboard="false"
+                role="dialog">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="notification-title">Registration Requests</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="fixTableHead">
+                                <table class="table table-bordered table-striped text-center">
+                                    <thead>
+                                        <tr>
+                                            <th>User ID</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>DOB</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><button class="btn btn-success">Approve</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><button class="btn btn-success">Approve</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><button class="btn btn-success">Approve</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><button class="btn btn-success">Approve</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><button class="btn btn-success">Approve</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modals End -->
+
+            <!-- Report Gen Buttons -->
+            <div class="ml-auto mr-4 mt-4 float-right">
+                <button class="btn">
+                    <i class="fa fa-file-pdf-o fs-24" aria-hidden="true"></i>
+                </button>
+                <button class="btn">
+                    <i class="fa fa-file-excel-o fs-24" aria-hidden="true"></i>
+                </button>
+            </div>
+            <!-- Report Gen Buttons End -->
         </div>
     </div>                       
 </div>
